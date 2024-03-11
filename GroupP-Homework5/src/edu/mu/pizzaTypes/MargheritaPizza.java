@@ -28,6 +28,10 @@ public class MargheritaPizza extends AbstractPizza{
 			ICookingStrategy cookingStrategy, double cookingPrice) {
 		super(toppingList, priceWithoutToppings, totalPrice, pizzaOrderID, cookingStrategy, cookingPrice);
 		
+		//add default toppings
+		toppingList.add(Toppings.TOMATO);
+		toppingList.add(Toppings.CHEESE);
+		
 	}
 
 	//method that calculates the total price of the pizza using priceWithoutToppings 
@@ -55,9 +59,6 @@ public class MargheritaPizza extends AbstractPizza{
 	//used to make updates to the pizza
 	@Override
 	public double updatePizzaPrice() {
-	//set priceWithoutToppings attribute to passed parameter
-		this.priceWithoutToppings = priceWithoutToppings;
-			
 		//set toppingPrice to 0
 		double toppingPrice = 0;
 				
