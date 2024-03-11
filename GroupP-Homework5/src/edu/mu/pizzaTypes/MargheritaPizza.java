@@ -24,9 +24,9 @@ public class MargheritaPizza extends AbstractPizza{
 	 * @param cookingStrategy
 	 * @param cookingPrice
 	 */
-	public MargheritaPizza(List<Toppings> toppingList, double priceWithoutToppings, double totalPrice, int pizzaOrderID,
-			ICookingStrategy cookingStrategy, double cookingPrice) {
-		super(toppingList, priceWithoutToppings, totalPrice, pizzaOrderID, cookingStrategy, cookingPrice);
+	public MargheritaPizza(int pizzaOrderID) {
+		super(pizzaOrderID);
+		this.setPriceWithoutToppings(2.50);
 		
 		
 	}
@@ -53,27 +53,16 @@ public class MargheritaPizza extends AbstractPizza{
 		}
 		//calculate totalPrice of pizza and toppings & return value
 		//should this be this.?
-		totalPrice = priceWithoutToppings + toppingPrice;
+		totalPrice = priceWithoutToppings + toppingPrice + cookingPrice;
 		return totalPrice;
 	}
 
 	//calculates and updates the totalPrice of the pizza using priceWithoutToppings attribute and
-	//prices of each topping in toppingsList
 	//used to make updates to the pizza
 	@Override
 	public double updatePizzaPrice() {
-		//set toppingPrice to 0
-		double toppingPrice = 0;
-				
-		//go through toppingList and add up the dollar values associated with each topping on pizza
-		for(Toppings topping: toppingList) {
-			toppingPrice = toppingPrice + topping.getToppingPrice();
-		}
-		
-		//calculate totalPrice of pizza and toppings & return value
-		//should totalPrice be this.?
-		totalPrice = priceWithoutToppings + toppingPrice;
-		return totalPrice;	
+		totalPrice=(addTopingsToPrice(getPriceWithoutToppings()) + cookingPrice);
+		return totalPrice;
 		
 	}
 
