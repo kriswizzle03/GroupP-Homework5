@@ -1,5 +1,6 @@
 package edu.mu.pizza;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.mu.Cooking.ICookingStrategy;
@@ -22,16 +23,12 @@ public abstract class AbstractPizza {
 	 * @param cookingStrategy
 	 * @param cookingPrice
 	 */
-	public AbstractPizza(List<Toppings> toppingList, double priceWithoutToppings, double totalPrice, int pizzaOrderID,
-			ICookingStrategy cookingStrategy, double cookingPrice) {
-		super();
-		this.toppingList = toppingList;
-		this.priceWithoutToppings = priceWithoutToppings;
-		this.totalPrice = totalPrice;
+	public AbstractPizza(int pizzaOrderID) {
 		this.pizzaOrderID = pizzaOrderID;
-		this.cookingStrategy = cookingStrategy;
-		this.cookingPrice = cookingPrice;
+		toppingList = new ArrayList<Toppings>();
+		
 	}
+		
 	
 	public List<Toppings> getToppingList() {
 		return toppingList;
