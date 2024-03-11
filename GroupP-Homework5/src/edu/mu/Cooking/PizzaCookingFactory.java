@@ -16,19 +16,21 @@ import edu.mu.pizzaTypes.PizzaType;
 //creates AbstractPizza instance and instantiates it according to pizzaType parameter
 //sets pizzaOrderID of the pizza using current orderIDCounter
 public class PizzaCookingFactory{
+	private static int orderIDCounter = 1;
 	
 	public AbstractPizza createPizza(PizzaType pizzaType) {
 		
-		double orderIDCounter = orderIDCounter++;
+		int pizzaOrderID = orderIDCounter++;
+		
 		switch(pizzaType) {
 			case MARGHERITA:
-				return new MargheritaPizza();
+				return new MargheritaPizza(pizzaOrderID);
 			case HAWAIIAN:
-				return new HawaiianPizza();
+				return new HawaiianPizza(pizzaOrderID);
 			case SUPREME:
-				return new SupremePizza();
+				return new SupremePizza(pizzaOrderID);
 			case VEGETARIAN:
-				return new VegetarianPizza();
+				return new VegetarianPizza(pizzaOrderID);
 			default:
 				System.out.println("Invalid pizza type!");
 				break;
