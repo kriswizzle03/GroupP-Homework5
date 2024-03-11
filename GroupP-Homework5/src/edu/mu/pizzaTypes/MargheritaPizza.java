@@ -25,9 +25,9 @@ public class MargheritaPizza extends AbstractPizza{
 	 * @param cookingPrice
 	 */
 	public MargheritaPizza(int pizzaOrderID) {
+		
 		super(pizzaOrderID);
 		this.setPriceWithoutToppings(2.50);
-		
 		
 	}
 	

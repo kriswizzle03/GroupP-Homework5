@@ -22,9 +22,9 @@ public class HawaiianPizza extends AbstractPizza{
 	 * @param cookingStrategy
 	 * @param cookingPrice
 	 */
-	public HawaiianPizza(List<Toppings> toppingList, double priceWithoutToppings, double totalPrice, int pizzaOrderID,
-			ICookingStrategy cookingStrategy, double cookingPrice) {
-		super(toppingList, priceWithoutToppings, totalPrice, pizzaOrderID, cookingStrategy, cookingPrice);
+	public HawaiianPizza(int pizzaOrderID) {
+		super(pizzaOrderID);
+		this.setPriceWithoutToppings(3.00);
 		
 	}
 

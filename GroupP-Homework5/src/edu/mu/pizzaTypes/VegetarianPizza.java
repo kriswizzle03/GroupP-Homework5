@@ -22,10 +22,17 @@ public class VegetarianPizza extends AbstractPizza{
 	 * @param cookingStrategy
 	 * @param cookingPrice
 	 */
-	public VegetarianPizza(List<Toppings> toppingList, double priceWithoutToppings, double totalPrice, int pizzaOrderID,
-			ICookingStrategy cookingStrategy, double cookingPrice) {
-		super(toppingList, priceWithoutToppings, totalPrice, pizzaOrderID, cookingStrategy, cookingPrice);
-		// TODO Auto-generated constructor stub
+	public VegetarianPizza(int pizzaOrderID) {
+		super(pizzaOrderID);
+		this.setPriceWithoutToppings(1.50);
+		
+		//add default toppings
+		toppingList.add(Toppings.TOMATO);
+		toppingList.add(Toppings.CHEESE);
+		toppingList.add(Toppings.BELL_PEPPER);
+		toppingList.add(Toppings.BLACK_OLIVE);
+		toppingList.add(Toppings.MUSHROOM);
+		
 	}
 
 	@Override

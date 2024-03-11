@@ -19,10 +19,19 @@ public class SupremePizza extends AbstractPizza{
 	 * @param cookingStrategy
 	 * @param cookingPrice
 	 */
-	public SupremePizza(List<Toppings> toppingList, double priceWithoutToppings, double totalPrice, int pizzaOrderID,
-			ICookingStrategy cookingStrategy, double cookingPrice) {
-		super(toppingList, priceWithoutToppings, totalPrice, pizzaOrderID, cookingStrategy, cookingPrice);
-		// TODO Auto-generated constructor stub
+	public SupremePizza(int pizzaOrderID) {
+		super(pizzaOrderID);
+		this.setPriceWithoutToppings(3.50);
+		
+		//add default toppings
+		toppingList.add(Toppings.TOMATO);
+		toppingList.add(Toppings.CHEESE);
+		toppingList.add(Toppings.BELL_PEPPER);
+		toppingList.add(Toppings.ITALIAN_SAUSAGE);
+		toppingList.add(Toppings.PEPPERONI);
+		toppingList.add(Toppings.BLACK_OLIVE);
+		toppingList.add(Toppings.MUSHROOM);
+		
 	}
 
 	@Override
