@@ -28,6 +28,10 @@ public class MargheritaPizza extends AbstractPizza{
 		
 		super(pizzaOrderID);
 		this.setPriceWithoutToppings(2.50);
+
+		//add default toppings
+		toppingList.add(Toppings.TOMATO);
+		toppingList.add(Toppings.CHEESE);
 		
 	}
 	
@@ -39,10 +43,6 @@ public class MargheritaPizza extends AbstractPizza{
 	protected double addTopingsToPrice(double priceWithoutToppings) {
 		//set priceWithoutToppings attribute to passed parameter
 		this.priceWithoutToppings = priceWithoutToppings;
-		
-		//add default toppings
-		toppingList.add(Toppings.TOMATO);
-		toppingList.add(Toppings.CHEESE);
 		
 		//set toppingPrice to 0
 		double toppingPrice = 0;

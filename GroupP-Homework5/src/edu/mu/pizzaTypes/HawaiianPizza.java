@@ -26,6 +26,12 @@ public class HawaiianPizza extends AbstractPizza{
 		super(pizzaOrderID);
 		this.setPriceWithoutToppings(3.00);
 		
+
+		//add default toppings
+		toppingList.add(Toppings.CANADIAN_BACON);
+		toppingList.add(Toppings.CHEESE);
+		toppingList.add(Toppings.PINEAPPLE);
+		
 	}
 
 	@Override
