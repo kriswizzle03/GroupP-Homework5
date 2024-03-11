@@ -37,14 +37,27 @@ public class VegetarianPizza extends AbstractPizza{
 
 	@Override
 	protected double addTopingsToPrice(double priceWithoutToppings) {
-		// TODO Auto-generated method stub
-		return 0;
+		//set priceWithoutToppings attribute to passed parameter
+		this.priceWithoutToppings = priceWithoutToppings;
+		
+		//set toppingPrice to 0
+		double toppingPrice = 0;
+		
+		//go through toppingList and add up the dollar values associated with each topping on pizza
+		for(Toppings topping: toppingList) {
+			toppingPrice = toppingPrice + topping.getToppingPrice();
+		}
+		//calculate totalPrice of pizza and toppings & return value
+		//should this be this.?
+		totalPrice = priceWithoutToppings + toppingPrice + cookingPrice;
+		return totalPrice;
+
 	}
 
 	@Override
 	public double updatePizzaPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+		totalPrice=(addTopingsToPrice(getPriceWithoutToppings()) + cookingPrice);
+		return totalPrice;
 	}
 
 }
