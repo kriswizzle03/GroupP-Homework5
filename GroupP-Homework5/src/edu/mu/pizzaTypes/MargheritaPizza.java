@@ -27,7 +27,11 @@ public class MargheritaPizza extends AbstractPizza{
 	public MargheritaPizza(int pizzaOrderID) {
 		
 		super(pizzaOrderID);
+		this.pizzaOrderID = pizzaOrderID;
+		//default price
 		this.setPriceWithoutToppings(2.50);
+		
+		
 
 		//add default toppings
 		toppingList.add(Toppings.TOMATO);
@@ -40,7 +44,7 @@ public class MargheritaPizza extends AbstractPizza{
 	//and the prices of each topping in toppingsList
 	//for default toppings
 	@Override
-	protected double addTopingsToPrice(double priceWithoutToppings) {
+	protected double addToppingsToPrice(double priceWithoutToppings) {
 		//set priceWithoutToppings attribute to passed parameter
 		this.priceWithoutToppings = priceWithoutToppings;
 		
@@ -54,6 +58,7 @@ public class MargheritaPizza extends AbstractPizza{
 		//calculate totalPrice of pizza and toppings & return value
 		//should this be this.?
 		totalPrice = priceWithoutToppings + toppingPrice + cookingPrice;
+		
 		return totalPrice;
 	}
 
@@ -61,9 +66,22 @@ public class MargheritaPizza extends AbstractPizza{
 	//used to make updates to the pizza
 	@Override
 	public double updatePizzaPrice() {
-		totalPrice=(addTopingsToPrice(getPriceWithoutToppings()) + cookingPrice);
+		totalPrice=(addToppingsToPrice(getPriceWithoutToppings()) + getCookingPrice());
+		
+		//do I need this?
+		setTotalPrice(totalPrice);
 		return totalPrice;
 		
 	}
+
+
+	@Override
+	public String toString() {
+		return "ToppingList = " + toppingList + ", priceWithoutToppings = " + priceWithoutToppings
+				+ ", totalPrice = " + totalPrice + ", pizzaOrderID = " + pizzaOrderID + ", cookingStrategy = "
+				+ cookingStrategy + ", cookingPrice = " + cookingPrice;
+	}
+	
+	
 
 }

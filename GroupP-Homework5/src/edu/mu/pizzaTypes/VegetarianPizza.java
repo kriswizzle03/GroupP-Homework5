@@ -36,7 +36,7 @@ public class VegetarianPizza extends AbstractPizza{
 	}
 
 	@Override
-	protected double addTopingsToPrice(double priceWithoutToppings) {
+	protected double addToppingsToPrice(double priceWithoutToppings) {
 		//set priceWithoutToppings attribute to passed parameter
 		this.priceWithoutToppings = priceWithoutToppings;
 		
@@ -56,7 +56,7 @@ public class VegetarianPizza extends AbstractPizza{
 
 	@Override
 	public double updatePizzaPrice() {
-		totalPrice=(addTopingsToPrice(getPriceWithoutToppings()) + cookingPrice);
+		totalPrice=(addToppingsToPrice(getPriceWithoutToppings()) + cookingPrice);
 		return totalPrice;
 	}
 

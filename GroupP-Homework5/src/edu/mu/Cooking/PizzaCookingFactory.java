@@ -17,25 +17,31 @@ import edu.mu.pizzaTypes.PizzaType;
 //sets pizzaOrderID of the pizza using current orderIDCounter
 public class PizzaCookingFactory{
 	private static int orderIDCounter = 1;
-	
-	public AbstractPizza createPizza(PizzaType pizzaType) {
-		
-		int pizzaOrderID = orderIDCounter++;
-		
-		switch(pizzaType) {
-			case MARGHERITA:
-				return new MargheritaPizza(pizzaOrderID);
-			case HAWAIIAN:
-				return new HawaiianPizza(pizzaOrderID);
-			case SUPREME:
-				return new SupremePizza(pizzaOrderID);
-			case VEGETARIAN:
-				return new VegetarianPizza(pizzaOrderID);
-			default:
-				System.out.println("Invalid pizza type!");
-				break;
-		}
-		return null;
-		
-	}
+
+	 public AbstractPizza createPizza(PizzaType pizzaType) {
+	     AbstractPizza pizza;
+
+	     switch (pizzaType) {
+	         case MARGHERITA:
+	             pizza = new MargheritaPizza(orderIDCounter);
+	             break;
+	         case VEGETARIAN:
+	             pizza = new VegetarianPizza(orderIDCounter);
+	             break;
+	         case HAWAIIAN:
+	             pizza = new HawaiianPizza(orderIDCounter);
+	             break;
+	         case SUPREME:
+	             pizza = new SupremePizza(orderIDCounter);
+	             break;
+	         default:
+	             throw new IllegalArgumentException("Invalid pizza type: " + pizzaType);
+	     }
+
+	     pizza.setPizzaOrderID(orderIDCounter);
+	     orderIDCounter++;
+	    
+	     //pizza.setPizzaOrderID(++orderIDCounter);
+	     return pizza;
+	 }
 }
