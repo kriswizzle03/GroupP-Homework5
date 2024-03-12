@@ -27,23 +27,23 @@ public class Main {
 		
         // Add pizzas to the cart
         order.addPizzaToCart(PizzaType.MARGHERITA);
-        order.addPizzaToCart(PizzaType.VEGETARIAN);
-        order.addPizzaToCart(PizzaType.HAWAIIAN);
-        order.addPizzaToCart(PizzaType.SUPREME);
+      //  order.addPizzaToCart(PizzaType.VEGETARIAN);
+    //    order.addPizzaToCart(PizzaType.HAWAIIAN);
+       // order.addPizzaToCart(PizzaType.SUPREME);
 	     
         
         
         // Select cooking strategies for the pizzas in the cart
         order.selectCookingStrategyByPizzaOrderID(1, CookingStyleType.BRICK_OVEN);
-        order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.CONVENTIONAL_OVEN);
-        order.selectCookingStrategyByPizzaOrderID(3, CookingStyleType.MICROWAVE);
-        order.selectCookingStrategyByPizzaOrderID(4, CookingStyleType.BRICK_OVEN);
+       // order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.CONVENTIONAL_OVEN);
+       // order.selectCookingStrategyByPizzaOrderID(3, CookingStyleType.MICROWAVE);
+       // order.selectCookingStrategyByPizzaOrderID(4, CookingStyleType.BRICK_OVEN);
 
         // Print pizza order cart
         order.printPizzaOrderCart(1);
-        order.printPizzaOrderCart(2);
-        order.printPizzaOrderCart(3);
-        order.printPizzaOrderCart(4);
+       // order.printPizzaOrderCart(2);
+       // order.printPizzaOrderCart(3);
+       // order.printPizzaOrderCart(4);
         
       
 

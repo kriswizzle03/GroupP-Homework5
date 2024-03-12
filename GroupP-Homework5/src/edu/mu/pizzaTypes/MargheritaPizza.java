@@ -24,12 +24,14 @@ public class MargheritaPizza extends AbstractPizza{
 	 * @param cookingStrategy
 	 * @param cookingPrice
 	 */
-	public MargheritaPizza(int pizzaOrderID) {
+	public MargheritaPizza(double priceWithoutToppings) {
 		
-		super(pizzaOrderID);
-		this.pizzaOrderID = pizzaOrderID;
+		super(priceWithoutToppings);
+		
+		
 		//default price
 		this.setPriceWithoutToppings(2.50);
+		
 		
 		
 
@@ -66,14 +68,12 @@ public class MargheritaPizza extends AbstractPizza{
 	//used to make updates to the pizza
 	@Override
 	public double updatePizzaPrice() {
-		totalPrice=(addToppingsToPrice(getPriceWithoutToppings()) + getCookingPrice());
+		totalPrice=(addToppingsToPrice(getPriceWithoutToppings()) + cookingPrice);
 		
-		//do I need this?
-		setTotalPrice(totalPrice);
 		return totalPrice;
 		
 	}
-
+	
 
 	@Override
 	public String toString() {

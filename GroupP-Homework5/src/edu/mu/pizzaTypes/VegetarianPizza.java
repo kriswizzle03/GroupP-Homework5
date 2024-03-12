@@ -22,8 +22,9 @@ public class VegetarianPizza extends AbstractPizza{
 	 * @param cookingStrategy
 	 * @param cookingPrice
 	 */
-	public VegetarianPizza(int pizzaOrderID) {
-		super(pizzaOrderID);
+	public VegetarianPizza(double priceWithoutToppings) {
+		super(priceWithoutToppings);
+		
 		this.setPriceWithoutToppings(1.50);
 		
 		//add default toppings

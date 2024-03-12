@@ -26,7 +26,9 @@ public abstract class AbstractPizza {
 	public AbstractPizza(double priceWithoutToppings) {
 		toppingList = new ArrayList<>();
         this.priceWithoutToppings = priceWithoutToppings;
-        totalPrice = getTotalPrice();
+        //totalPrice = getTotalPrice();
+        
+        
         pizzaOrderID = ++orderIDCounter;
         
         
@@ -119,11 +121,11 @@ public abstract class AbstractPizza {
         }
     }
 
-    @Override
-	public String toString() {
+    //@Override
+	/*public String toString() {
 		return "Topping List: " + toppingList + ", Price Without Toppings: " + priceWithoutToppings
 				+ ", Total Price: " + totalPrice + ", Pizza Order ID: " + pizzaOrderID + ", Cooking Strategy: "
-				+ getCookingStrategy().getClass().getSimpleName() + ", Cooking Price: " + cookingPrice + ", Pizza Type: " + this.getClass().getSimpleName();
-	}
+				+ getCookingStrategy().getClass().getSimpleName() + ", Cooking Price: " + getCookingPrice() + ", Pizza Type: " + this.getClass().getSimpleName();
+	}*/
     
 }

@@ -19,8 +19,9 @@ public class SupremePizza extends AbstractPizza{
 	 * @param cookingStrategy
 	 * @param cookingPrice
 	 */
-	public SupremePizza(int pizzaOrderID) {
-		super(pizzaOrderID);
+	public SupremePizza(double priceWithoutToppings) {
+		super(priceWithoutToppings);
+		
 		this.setPriceWithoutToppings(3.50);
 		
 		//add default toppings
